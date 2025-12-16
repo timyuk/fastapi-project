@@ -30,18 +30,18 @@ docker volume create shorturl_data
 ### Собрать образы
 
 ```bash
-docker build -t todoapp ./todo_app
-docker build -t shorturlapp ./shorturl_app
+docker build -t todo-service ./todo_app
+docker build -t shorturl-service ./shorturl_app
 ```
 
 ### Запустить контейнеры
 
 ```bash
 # Todo
-docker run -d -p 8000:80 -v todo_data:/app/data --name todo_service todoapp
+docker run -d -p 8000:80 -v todo_data:/app/data --name todo_service todo-service
 
 # ShortURL
-docker run -d -p 8001:80 -v shorturl_data:/app/data --name shorturl_service shorturlapp
+docker run -d -p 8001:80 -v shorturl_data:/app/data --name shorturl_service shorturl-service
 ```
 
 ---
