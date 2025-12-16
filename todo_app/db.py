@@ -1,6 +1,7 @@
 import aiosqlite
+import os
 
-DB_PATH = '/app/data/todo.db'
+DB_PATH = os.getenv("DB_PATH", "./todo.db")
 
 async def create_table():
     async with aiosqlite.connect(DB_PATH) as db:
